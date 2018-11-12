@@ -6,7 +6,8 @@ let width = 12,
     height = 12;
 let animation,
     position,
-    runGame;
+    runGame,
+    speed = 50;
 
 
 function createSnake() {
@@ -47,7 +48,7 @@ function animationSnake(top, right, bottom, left) {
     ctx.fillRect(coordSnake[coordSnake.length - 1][0], coordSnake[coordSnake.length - 1][1], 12, 12);
     gameOver();
     eatFood();
-    }, 50)
+    }, speed)
 }
 
 onkeydown = function(e) {
@@ -147,6 +148,14 @@ run.onclick = function() {
     runGame = true;
 }
 
+let speedSnake = document.myForm.myRadio;
+
+for (let i = 0; i < speedSnake.length; i++) {
+    speedSnake[i].onclick = function () {
+        
+        speed = this.value === "1" ? 125 : this.value === "2" ? 100 : this.value === "3" ? 75 : 50;  
+    }
+}
 
 createSnake();
 createFood();

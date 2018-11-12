@@ -20,5 +20,16 @@ button {
     position: relative;
     background: #f72f2f;
     cursor: pointer;
-    
+}
+
+form {
+   position: relative;
+    right: 400px;
+    top: 60px;
+    font-family: Arial;
+}
+
+form h1 {
+    font-size: 20px;
+    font-weight: 100;
 }
